@@ -1,0 +1,31 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // -----------------------------------------------------------------
+    // QUICK START (active by default): anyone can read AND write.
+    // This lets the admin/admin screen work immediately with zero setup.
+    // LIMITATION: because the app checks "admin/admin" inside the app
+    // itself (not with Firebase Authentication), these rules cannot
+    // technically tell a real admin apart from anyone else calling your
+    // Firestore API directly. Fine for a first launch/testing; switch to
+    // the RECOMMENDED block below before you rely on this for a school
+    // with public, sensitive, or paid content. See README.md ->
+    // "Securing Admin Login" for the upgrade path.
+    // -----------------------------------------------------------------
+    match /{document=**} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // -----------------------------------------------------------------
+    // RECOMMENDED FOR PRODUCTION: public read, sign-in-required write.
+    // Uncomment this block and DELETE the block above once you've wired
+    // up Firebase Authentication for the admin screen.
+    // -----------------------------------------------------------------
+    // match /{collection}/{docId} {
+    //   allow read: if true;
+    //   allow write: if request.auth != null;
+    // }
+  }
+}
