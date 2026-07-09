@@ -9,7 +9,7 @@ export const SUBJECTS = [
 ];
 
 // Update this with your real WhatsApp business number (with country code, no + or spaces)
-export const WHATSAPP_NUMBER = "919999999999";
+export const WHATSAPP_NUMBER = "00918217475489";
 
 // Update this with the email address that should receive contact form submissions
-export const CONTACT_EMAIL = "kirticlasses@example.com";
+export const CONTACT_EMAIL = "alokganglytheauthor@gmail.com";
