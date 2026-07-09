@@ -6,14 +6,14 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "REPLACE_ME",
-  authDomain: "REPLACE_ME.firebaseapp.com",
-  projectId: "REPLACE_ME",
-  storageBucket: "REPLACE_ME.appspot.com",
-  messagingSenderId: "REPLACE_ME",
-  appId: "REPLACE_ME",
+  apiKey: "AIzaSyBaZMN8SNV_gKc9iFe8VK7WoaQ0MwEi2lI",
+  authDomain: "kirticlasses-dba36.firebaseapp.com",
+  projectId: "kirticlasses-dba36",
+  storageBucket: "kirticlasses-dba36.firebasestorage.app",
+  messagingSenderId: "41290909637",
+  appId: "1:41290909637:web:68b50c88b92e531ac36dac",
+  measurementId: "G-N7EC6VW5L0"
 };
-
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export default app;
