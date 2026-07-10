@@ -17,7 +17,8 @@ export default function HomeScreen({ navigation }) {
       <ScrollView>
         <View style={styles.header}>
           <Text style={styles.headerTitle}>KirtiClasses</Text>
-          <Text style={styles.headerSubtitle}>CBSE Class 6 – 10 · Learning Made Simple</Text>
+          <Text style={styles.headerSubtitle}>Learning Made Simple By Kirti Ganguly</Text>
+           <Link href="www.kirticlasses.in" style={styles.linkText}>www.kirticlasses.in</Link>
         </View>
         <View style={styles.grid}>
           {MENU.map((item) => (
