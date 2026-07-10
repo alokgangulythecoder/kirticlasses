@@ -46,7 +46,7 @@ export function AuthProvider({ children }) {
 
   return (
     <AuthContext.Provider
-      value={{ user, initializing, login, logout }}
+      value={{ isAdmin: !!user, user, initializing, login, logout }}
     >
       {children}
     </AuthContext.Provider>
