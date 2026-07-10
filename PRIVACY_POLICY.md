@@ -8,7 +8,7 @@ students. This policy explains what information the app interacts with.
 ## Information We Collect
 - **Contact form:** When you use the Contact Us form, your name, email
   address, and message are sent via your device's email app to
-  contactus-kirticlasses@gmail.com. This data is not stored on our servers by the app
+  contactus.kirticlasses@gmail.com. This data is not stored on our servers by the app
   itself.
 - **App content:** Practice tests, quizzes, tutorials, and workbook links
   are stored in our Firebase database and are not linked to any individual
@@ -32,4 +32,4 @@ We may update this policy from time to time. Changes will be posted on
 this page.
 
 ## Contact Us
-Questions about this policy? Email contactus-kirticlasses@gmail.com.
+Questions about this policy? Email contactus.kirticlasses@gmail.com.
