@@ -16,7 +16,7 @@
       "favicon": "./assets/favicon.png"
     },
     "android": {
-      "package": "com.kirticlassesbykirtiganguly.app",
+      "package": "com.kirticlasses.app",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
