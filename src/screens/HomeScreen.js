@@ -33,8 +33,7 @@ export default function HomeScreen({ navigation }) {
             </TouchableOpacity>
           ))}
         </View>
-        <TouchableOpacity style={styles.adminLink} onPress={() => navigation.navigate("AdminLogin")}>
-          <Text style={styles.adminLinkText}>Admin Login</Text>
+    
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
