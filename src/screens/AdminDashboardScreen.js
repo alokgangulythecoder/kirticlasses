@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView } from "react-native";
+import React, { useEffect } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, ActivityIndicator } from "react-native";
 import { useAuth } from "../context/AuthContext";
 import { COLORS } from "../constants/colors";
 
@@ -11,7 +11,30 @@ const SECTIONS = [
 ];
 
 export default function AdminDashboardScreen({ navigation }) {
-  const { logout } = useAuth();
+  const { logout, isAdmin, initializing } = useAuth();
+
+  // Guards this screen even if someone lands here without a valid
+  // session (e.g. their sign-in expired while this screen was open).
+  useEffect(() => {
+    if (!initializing && !isAdmin) {
+      navigation.replace("Home");
+    }
+  }, [initializing, isAdmin]);
+
+  const handleLogout = async () => {
+    await logout();
+    navigation.replace("Home");
+  };
+
+  if (initializing || !isAdmin) {
+    return (
+      <SafeAreaView style={styles.safe}>
+        <View style={styles.container}>
+          <ActivityIndicator color={COLORS.primary} />
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -22,13 +45,7 @@ export default function AdminDashboardScreen({ navigation }) {
             <Text style={styles.itemText}>{s.label}</Text>
           </TouchableOpacity>
         ))}
-        <TouchableOpacity
-          style={[styles.item, styles.logout]}
-          onPress={() => {
-            logout();
-            navigation.replace("Home");
-          }}
-        >
+        <TouchableOpacity style={[styles.item, styles.logout]} onPress={handleLogout}>
           <Text style={[styles.itemText, { color: COLORS.danger }]}>🚪 Logout</Text>
         </TouchableOpacity>
       </View>
